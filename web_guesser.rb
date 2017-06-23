@@ -1,5 +1,8 @@
 require 'sinatra'
+require 'sinatra/reloader'
+
+num ||= rand 101
 
 get '/' do
-  "Hello, world!"
+  "The sEcRET NUMBAH is #{num}"
 end
