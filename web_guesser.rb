@@ -1,3 +1,7 @@
+# things I learned:
+# - adding features without testing feels so bad, even in something this simple
+# - TESTING IS THE GREATEST!
+
 require 'sinatra'
 require 'sinatra/reloader'
 
@@ -23,6 +27,7 @@ end
 
 get '/' do
   user_guess = params['guess']
+  cheat_mode = params['cheat']
   @@guesses -= 1
   if user_guess.to_i == number
     response = message number, user_guess
@@ -35,5 +40,6 @@ get '/' do
   else
     response = message number, user_guess
   end
-  erb :index, :locals => {:number => number, :user_guess => user_guess, :message => response}
+  erb :index, :locals => {:number => number, :user_guess => user_guess, :message => response,
+                        :cheat => cheat_mode}
 end

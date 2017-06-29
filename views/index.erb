@@ -12,6 +12,10 @@
       <input type='submit' value='Guess!' />
     <p>
       <%= message[0] %>
+
+      <% if cheat %>
+        <%= "Cheat mode enable: the secret number is #{number}" %>
+      <% end %>
     </p>
   </body>
 </html>
